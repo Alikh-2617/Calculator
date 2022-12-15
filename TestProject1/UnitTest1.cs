@@ -1,4 +1,5 @@
 using Calculator;
+using System;
 
 namespace TestProject1
 {
@@ -9,7 +10,18 @@ namespace TestProject1
         [Fact]
         public void SumTest()
         {
+            int[] x = { 2 };
+            int[] y = { 2 };
+            Assert.Equal(8, calculator.sum(x, y));
             Assert.Equal(4, calculator.sum(2, 2));
+        }
+        [Fact]
+        public void SubTest()
+        {
+            int[] x = { 4 };
+            int[] y = { 2 };
+            Assert.Equal(2, calculator.sub(x, y));
+            Assert.Equal(2, calculator.sub(4, 2));
         }
 
         [Fact]
@@ -19,16 +31,14 @@ namespace TestProject1
         }
 
         [Fact]
-        public void DivTest()
+        public void divTest()
         {
-            Assert.Equal(2, calculator.div(4, 2));
+            // funkar inte tror jag 
+            // ArgumentException e = Assert.Throws<DivideByZeroException>(() => calculator.div(5, 0));
+            // Assert.Equal("Attempted to divide by zero.", e.Message);
+
         }
 
-        [Fact]
-        public void SubTest()
-        {
-            Assert.Equal(2, calculator.sub(4, 2));
-        }
 
     }
 }

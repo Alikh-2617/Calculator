@@ -8,12 +8,10 @@ namespace Calculator
 {
     public class CalculatorXunit
     {
-
         public int SetInt()
         {
             int x;
             Console.Write(" :>> ");
-            //   int x = Convert.ToInt32(Console.ReadLine());
             while (!int.TryParse(Console.ReadLine(), out x))
             {
                 Console.WriteLine("invalid input , try again.");
@@ -21,31 +19,70 @@ namespace Calculator
             }
             return x;
         }
+        public int[] SetList()
+        {
+            Console.Write(" :>> ");
+            int[] x = { };
+            for (int i = 0; i < 10; i++) { Console.Write(" :>> "); x[i] = Convert.ToInt32(Console.ReadLine()); }
+            return x;
+        }
         public int sum(int x, int y)
         {
             return x + y;
+        }
+        public int sum(int[] x , int[]  y)
+        {
+            return x[0] + y[0];
         }
         public int sub(int x, int y)
         {
             return x-y;
         }
+        public int sub(int[] x, int[] y)
+        {
+            return x[0] - y[0];
+        }
+
         public int mul(int x, int y)
         {
             return x * y;
         }
-        public int div(int x, int y)
+        public void div(int x , int y)
         {
-            if (x == 0)
+
+            try
             {
-                Console.WriteLine("Divid by ziro is invalid ");
-                return y;
+                Console.WriteLine("Svart : " + x / y);
             }
-            if (y == 0)
+            catch (DivideByZeroException e)
             {
-                Console.WriteLine("Divid by ziro is invalid ");
-                return x;
+                Console.WriteLine(e.Message);
             }
-            return x / y;
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine($"Just Catched Exception with e : {e.Message}");
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("It just finallt block , Reject it ");
+            //}
         }
+
+
+        //public int div(int x, int y)
+        //{
+        //    if (x == 0)
+        //    {
+        //        Console.WriteLine("Divid by ziro is invalid ");
+        //        return y;
+        //    }
+        //    if (y == 0)
+        //    {
+        //        Console.WriteLine("Divid by ziro is invalid ");
+        //        return x;
+        //    }
+        //    return x / y;
+        //}
+
     }
 }

@@ -9,8 +9,8 @@ namespace Calculator
             bool run = true;
             while (run)
             {
-                int x;
-                int y;
+                int[] x;
+                int[] y;
                 Console.Clear();
                 Console.WriteLine("Hej här har du Menu :\n" +
                     "1- för addition\n" +
@@ -23,12 +23,18 @@ namespace Calculator
                 {
                     case 1:
                         Console.WriteLine("Addition");
-                        Console.WriteLine("Svart : " + calculator.sum(calculator.SetInt(), calculator.SetInt()) + "\n\ntryck Inter föratt komma vidare.");
+                        Console.WriteLine("Svart : " + 
+                            calculator.sum(calculator.SetInt(), calculator.SetInt()) +
+                            //calculator.sum(calculator.SetList(), calculator.SetList()) +
+                            "\n\ntryck Inter föratt komma vidare.");
                         Console.ReadKey();
                         break;
                     case 2:
                         Console.WriteLine("Subtraktion");
-                        Console.WriteLine("Svart : " + calculator.sub(calculator.SetInt(), calculator.SetInt()) + "\n\ntryck Inter föratt komma vidare.");
+                        Console.WriteLine("Svart : " + 
+                            calculator.sub(calculator.SetInt(), calculator.SetInt()) +
+                            //calculator.sub(calculator.SetList(), calculator.SetList()) +
+                            "\n\ntryck Inter föratt komma vidare.");
                         Console.ReadKey();
                         break;
                     case 3:
@@ -38,7 +44,8 @@ namespace Calculator
                         break;
                     case 4:
                         Console.WriteLine("Division");
-                        Console.WriteLine("Svart : " + calculator.div(calculator.SetInt(), calculator.SetInt()) + "\n\ntryck Inter föratt komma vidare.");
+                        
+                        Console.WriteLine("\n\ntryck Inter föratt komma vidare.");
                         Console.ReadKey();
 
                         break;
