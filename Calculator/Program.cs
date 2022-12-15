@@ -44,7 +44,7 @@ namespace Calculator
                         break;
                     case 4:
                         Console.WriteLine("Division");
-                        
+                        calculator.div(calculator.SetInt(), calculator.SetInt());
                         Console.WriteLine("\n\ntryck Inter föratt komma vidare.");
                         Console.ReadKey();
 

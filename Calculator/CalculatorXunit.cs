@@ -49,7 +49,11 @@ namespace Calculator
         }
         public void div(int x , int y)
         {
-
+            //if(x ==0 || y == 0)
+            //{
+            //    throw new DivideByZeroException();
+            //}
+            //Console.WriteLine("Svart : " + x / y);
             try
             {
                 Console.WriteLine("Svart : " + x / y);
@@ -58,14 +62,14 @@ namespace Calculator
             {
                 Console.WriteLine(e.Message);
             }
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine($"Just Catched Exception with e : {e.Message}");
-            //}
-            //finally
-            //{
-            //    Console.WriteLine("It just finallt block , Reject it ");
-            //}
+            catch (Exception e)
+            {
+                Console.WriteLine($"Just Catched Exception with e : {e.Message}");
+            }
+            finally
+            {
+                Console.WriteLine("It just finallt block , Reject it ");
+            }
         }
 
 
