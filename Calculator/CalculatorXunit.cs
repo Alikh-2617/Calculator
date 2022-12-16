@@ -47,8 +47,9 @@ namespace Calculator
         {
             return x * y;
         }
-        public void div(int x , int y)
+        public float div(int x , int y)
         {
+            float s = 0;
             //if(x ==0 || y == 0)
             //{
             //    throw new DivideByZeroException();
@@ -56,11 +57,13 @@ namespace Calculator
             //Console.WriteLine("Svart : " + x / y);
             try
             {
-                Console.WriteLine("Svart : " + x / y);
+
+                s = x / y;
+                return s;   
             }
             catch (DivideByZeroException e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message); 
             }
             catch (Exception e)
             {
@@ -70,6 +73,7 @@ namespace Calculator
             {
                 Console.WriteLine("It just finallt block , Reject it ");
             }
+            return 0;
         }
 
 

@@ -12,7 +12,7 @@ namespace TestProject1
         {
             int[] x = { 2 };
             int[] y = { 2 };
-            Assert.Equal(8, calculator.sum(x, y));
+            Assert.Equal(4, calculator.sum(x, y));
             Assert.Equal(4, calculator.sum(2, 2));
         }
         [Fact]
@@ -36,6 +36,10 @@ namespace TestProject1
             // funkar inte tror jag 
             // ArgumentException e = Assert.Throws<DivideByZeroException>(() => calculator.div(5, 0));
             // Assert.Equal("Attempted to divide by zero.", e.Message);
+            var result = calculator.div(3, 2);
+            Assert.IsType<float>(result);
+            Assert.Equal(0, calculator.div(0, 5));
+            
 
         }
 
